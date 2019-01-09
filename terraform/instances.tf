@@ -17,6 +17,8 @@ resource "google_compute_instance" "etcd" {
     }
   }
 
+  can_ip_forward = "true"
+
   service_account {
     scopes = [
     "compute-rw",
@@ -50,6 +52,8 @@ resource "google_compute_instance" "kubernetes-controller" {
     }
   }
 
+  can_ip_forward = "true"
+
   service_account {
     scopes = [
     "compute-rw",
@@ -82,6 +86,8 @@ resource "google_compute_instance" "kubernetes-worker" {
     access_config {
     }
   }
+
+  can_ip_forward = "true"
 
   service_account {
     scopes = [
