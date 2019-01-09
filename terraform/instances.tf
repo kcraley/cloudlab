@@ -17,6 +17,17 @@ resource "google_compute_instance" "etcd" {
     }
   }
 
+  service_account {
+    scopes = [
+    "compute-rw",
+    "storage-ro",
+    "service-management",
+    "service-control",
+    "logging-write",
+    "monitoring"
+    ]
+  }
+
   tags = ["kubernetes", "cloudlab", "cluster", "etcd"]
 }
 
@@ -39,6 +50,17 @@ resource "google_compute_instance" "kubernetes-controller" {
     }
   }
 
+  service_account {
+    scopes = [
+    "compute-rw",
+    "storage-ro",
+    "service-management",
+    "service-control",
+    "logging-write",
+    "monitoring"
+    ]
+  }
+
   tags = ["kubernetes", "cloudlab", "cluster", "controller"]
 }
 
@@ -59,6 +81,17 @@ resource "google_compute_instance" "kubernetes-worker" {
     network_ip = "10.240.0.3${count.index}"
     access_config {
     }
+  }
+
+  service_account {
+    scopes = [
+    "compute-rw",
+    "storage-ro",
+    "service-management",
+    "service-control",
+    "logging-write",
+    "monitoring"
+    ]
   }
 
   tags = ["kubernetes", "cloudlab", "cluster", "worker"]
