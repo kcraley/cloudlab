@@ -1,0 +1,6 @@
+# File for Git to ignore when managing commits
+
+# Terraform
+.terraform/
+*.tfstate*
+terraform-sa.json
