@@ -47,3 +47,8 @@ resource "google_compute_firewall" "cloudlab-external" {
 
   source_ranges = ["0.0.0.0/0"]
 }
+
+resource "google_compute_address" "kubernetes" {
+  name    = "kubernetes"
+  region  = "${var.region}"
+}
