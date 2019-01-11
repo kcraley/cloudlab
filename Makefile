@@ -5,6 +5,9 @@
 
 
 # Rules
+.PHONY: init
+init:
+	terraform init ./terraform
 
 .PHONY: plan
 plan:
