@@ -1,0 +1,15 @@
+{
+  "ignition": {
+    "version": "2.1.0"
+  },
+  "systemd": {
+    "units": {
+      "name": "etcd-member.service",
+      "enabled": "true",
+      "dropins": {
+        "name": "etcd-member.conf",
+        "contents": ${jsonencode(etcd-member-unit)}
+      }
+    }
+  }
+}
