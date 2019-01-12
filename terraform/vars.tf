@@ -1,27 +1,34 @@
 variable "machine_type" {
-  default = "f1-micro"
+  description = "Google compute instance type"
+  default     = "f1-micro"
 }
 
 variable "region" {
-  default = "us-east1"
+  description = "Google Cloud Platform region for resources"
+  default     = "us-east1"
 }
 
 variable "zones" {
-  default = ["us-east1-b", "us-east1-c", "us-east1-d"]
+  description = "Google Cloud Platform zones for compute instances"
+  default     = ["us-east1-b", "us-east1-c", "us-east1-d"]
 }
 
 variable "subnet" {
-  default = "10.240.0.0/24"
+  description = "Google VPC subnet"
+  default     = "10.240.0.0/24"
 }
 
 variable "etcd-count" {
-  default = "3"
+  description = "Overall count for etcd-member instances"
+  default     = "3"
 }
 
 variable "kubernetes-controller-count" {
-  default = "3"
+  description = "Overall count for Kubernetes controller instances"
+  default     = "3"
 }
 
 variable "kubernetes-worker-count" {
-  default = "2"
+  description = "Overall count for Kubernetes worker instances"
+  default     = "2"
 }
