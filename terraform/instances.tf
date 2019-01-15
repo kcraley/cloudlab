@@ -30,6 +30,10 @@ resource "google_compute_instance" "etcd" {
     ]
   }
 
+  metadata {
+    user-data = "${file("./cloud-init/etcd-clconf.json")}"
+  }
+
   tags = ["kubernetes", "cloudlab", "cluster", "etcd"]
 }
 
