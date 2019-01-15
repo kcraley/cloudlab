@@ -4,7 +4,9 @@
 # Import env vars if required
 
 
-# Rules
+# --------------------------------------------------
+# Terraform Rules
+# --------------------------------------------------
 .PHONY: init
 init:
 	terraform init ./terraform
@@ -15,8 +17,8 @@ plan:
 
 .PHONY: apply
 apply:
-	terraform apply ./terraform
+	terraform apply -auto-approve ./terraform
 
 .PHONY: destroy
 destroy:
-	terraform destroy ./terraform
+	terraform destroy -auto-approve ./terraform
