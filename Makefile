@@ -16,9 +16,16 @@ plan:
 	terraform plan ./terraform
 
 .PHONY: apply
-apply:
+apply: etcd-init
 	terraform apply -auto-approve ./terraform
 
 .PHONY: destroy
 destroy:
 	terraform destroy -auto-approve ./terraform
+
+# --------------------------------------------------
+# ETCD Rules
+# --------------------------------------------------
+.PHONY: etcd-init
+etcd-init:
+	bash ./bin/etcd-init.sh
